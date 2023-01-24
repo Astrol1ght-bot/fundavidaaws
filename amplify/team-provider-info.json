@@ -1,0 +1,24 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-fundavida-dev-143435-authRole",
+      "UnauthRoleArn": "arn:aws:iam::555296628964:role/amplify-fundavida-dev-143435-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::555296628964:role/amplify-fundavida-dev-143435-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-fundavida-dev-143435-deployment",
+      "UnauthRoleName": "amplify-fundavida-dev-143435-unauthRole",
+      "StackName": "amplify-fundavida-dev-143435",
+      "StackId": "arn:aws:cloudformation:us-east-1:555296628964:stack/amplify-fundavida-dev-143435/5b199360-9b5d-11ed-833b-120224c01b63",
+      "AmplifyAppId": "d2iiayduq5r9c"
+    },
+    "categories": {
+      "auth": {
+        "fundavidauth": {},
+        "userPoolGroups": {}
+      },
+      "api": {
+        "fundavida": {}
+      }
+    }
+  }
+}

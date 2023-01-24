@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "fundavida",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authfundavidauth"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 30,
+        "apiKeyExpirationDate": "2023-02-23T07:14:54.333Z",
+        "keyDescription": "api for fundavida app"
+      },
+      {
+        "mode": "AWS_IAM"
+      }
+    ]
+  }
+}

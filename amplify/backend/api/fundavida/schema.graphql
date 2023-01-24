@@ -1,0 +1,48 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Student @model @auth(rules: [
+  {allow: owner, provider: userPools}
+]){
+  id: ID!
+  name: String!
+  lastname: String!
+  province: String!
+  phoneNumber: String!
+  email: AWSEmail!
+  enrollments: [Enrollment] @hasMany
+}
+
+type Course @model @auth(rules: [
+  {allow: public, operations: [read], provider: iam},
+  {allow: owner, provider: userPools}
+]) {
+  id: ID!
+  name: String!
+  thumbnail: AWSURL!
+  images: [AWSURL!]!
+  description: String!
+  skills: String!
+  limit: Int!
+  available: Boolean!
+  unlimited: Boolean!
+  extraDetails: String
+  enrollment: Enrollment @belongsTo
+}
+
+type Enrollment @model @auth(rules: [
+  {allow: owner, provider: userPools}
+  ]){
+  id: ID!
+  date: AWSDateTime!
+  status: EnrollStatus!
+  student: Student @belongsTo
+  courses: [Course!] @hasMany
+}
+
+
+enum EnrollStatus {
+  pendiente
+  aceptado
+}
